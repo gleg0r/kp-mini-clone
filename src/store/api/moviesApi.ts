@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { ITopMovies } from '../../core/mocks/apiTypes';
 
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
@@ -9,10 +10,16 @@ export const moviesApi = createApi({
       headers.set('Authorization', import.meta.env.VITE_API_AUTH_TOKEN);
     }
   }),
-  tagTypes: [],
+  tagTypes: ['TopMovies'],
   endpoints: (builder) => ({
-    getTopMovies: builder.query({
-      query: (page: number) => `movie/top_rated?language=ru-RU&page/${page}`,
+    getTopMovies: builder.query<ITopMovies, number>({
+      query: (page: number) => ({
+        url: 'movie/top_rated',
+        params: {
+          language: 'ru-RU',
+          page: page,
+        },
+      }),
     }),
   }),
 });

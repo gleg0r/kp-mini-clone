@@ -21,5 +21,9 @@
   }
   &__link {
     @include fontStyle(16px, 700, 140%, $textPrimarySub);
+    transition: .3s;
+    &:hover {
+      color: $textPrimaryMain;
+    }
   }
 }

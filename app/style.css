@@ -87,3 +87,12 @@ label {
 legend {
 	display: block;
 }
+
+
+.ant-pagination-item-ellipsis {
+	color: rgb(172, 172, 172) !important;
+}
+
+.ant-pagination-item-link-icon {
+	color: #fa6801 !important;
+}
