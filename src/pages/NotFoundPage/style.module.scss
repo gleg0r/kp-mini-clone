@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.notFound {
+  @include flexCenter;
+  flex-direction: column;
+  gap: $space24;
+  &__title {
+    @include fontStyle(24px, 700, 140%, $textPrimaryMain);
+  }
+  &__desc {
+    @include fontStyle(16px, 700, 140%, $textPrimaryMain);
+  }
+  &__item {
+    @include fontStyle(16px, 700, 140%, $textPrimaryMain);
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 50%;
+  }
+  &__link {
+    @include fontStyle(16px, 700, 140%, $textPrimarySub);
+  }
+}

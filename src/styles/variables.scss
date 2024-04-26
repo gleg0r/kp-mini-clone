@@ -1,0 +1,39 @@
+// colors
+
+$textPrimaryMain: #FFFFFF;
+$textPrimarySub: #fa6801;
+$blackMainColor: #141414;
+
+// sizes
+
+$baseContainer: 1400px;
+$bigPosterSize: 500px;
+$smallPosterSize: 180px;
+
+//spaces
+
+$space16: 16px;
+$space20: 20px;
+$space24: 24px;
+
+// mixins
+
+@mixin fontStyle ($size, $weight, $lh, $color) {
+  font-family: "Rubik", sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lh;
+  color: $color;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.header {
+  width: 100%;
+  @include flexBetween;
+  padding: $space20;
+  &__logo {
+    @include fontStyle(36px, 700, 140%, $textPrimaryMain);
+    text-transform: uppercase;
+    &>span {
+      color: $textPrimarySub;
+    }
+  }
+}
