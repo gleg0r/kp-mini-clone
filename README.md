@@ -1,6 +1,6 @@
 Test Task
 
-Stack: React, Typescript, RTK, Vite, SCSS Modules, axios
+Stack: React, Typescript, RTK, Vite, SCSS Modules, RTK Query
 
 Node version 20.11.0
 
