@@ -43,8 +43,8 @@ const SerialsPage: FC = () => {
 
   return (
     <>
-      <main className={s.home}>
-        <h2 className={s.home__title}>Лучшие сериалы</h2>
+      <main className={s.serial}>
+        <h2 className={s.serial__title}>Лучшие сериалы</h2>
         {!isLoading ? (
           <Pagination
             showSizeChanger={false}
@@ -55,12 +55,12 @@ const SerialsPage: FC = () => {
           />
         ) : <LoadingOutlined />}
         {!isLoading && !isError ? (
-          <ul className={s.home__list}>
+          <ul className={s.serial__list}>
           {
             dataTyped.results.map((item: ITopSerialsResult) => {
               return (
-                <li key={item.id} className={s.home__item} onClick={() => setData(item.id)}>
-                  <Link to='/movie'>
+                <li key={item.id} className={s.serial__item} onClick={() => setData(item.id)}>
+                  <Link to='/serial'>
                     <MainMovieCard
                       rating={Math.round(item.vote_average * 10) / 10}
                       title={item.name}

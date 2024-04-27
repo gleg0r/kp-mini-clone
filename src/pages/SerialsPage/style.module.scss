@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.serial {
+  width: 100%;
+  padding: $space20;
+  display: flex;
+  flex-direction: column;
+  gap: $space16;
+  &__title {
+    @include fontStyle(36px, 500, 140%, $textPrimaryMain);
+  }
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: $space20;
+    grid-column-gap: $space20;
+  }
+  &__item {
+    cursor: pointer;
+  }
+  &__page {
+    @include fontStyle(14px, 500, 140%, $textPrimaryMain);
+    text-transform: uppercase;
+    transition: .3s;
+    &:hover {
+      color: $textPrimarySub;
+    }
+    &[disabled] {
+      color: $grayMainColor;
+    }
+  }
+  &__jump {
+    transition: .3s;
+    border-radius: 6px;
+    padding: 4px 4px 5px 4px;
+    &:hover {
+      background-color: $textPrimarySub;
+    }
+  }
+}

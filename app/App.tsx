@@ -5,7 +5,8 @@ import LayoutMain from '../src/layout/LayoutMain';
 import HomePage from '../src/pages/HomePage/HomePage';
 import NotFoundPage from '../src/pages/NotFoundPage/404';
 import MoviePage from '../src/pages/MoviePage/MoviePage';
-import SerialsPage from '../src/pages/SerialPage/SerialsPage';
+import SerialsPage from '../src/pages/SerialsPage/SerialsPage';
+import SerialPage from '../src/pages/SerialPage/SeriallPage';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path='/movie' element={<MoviePage />} />
             <Route path='/serials' element={<SerialsPage />} />
+            <Route path='/serial' element={<SerialPage />} />
             <Route path='*' element={<NotFoundPage />} />
           </Route>
         </Routes>

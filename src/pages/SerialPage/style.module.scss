@@ -1,41 +1,47 @@
 @import '../../styles/variables.scss';
 
-.home {
+.movie {
   width: 100%;
   padding: $space20;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: $space16;
   &__title {
-    @include fontStyle(36px, 500, 140%, $textPrimaryMain);
+    @include fontStyle(48px, 700, 140%, $textPrimaryMain);
+  }
+  &__rating {
+    @include fontStyle(36px, 700, 140%, $textPrimarySub);
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space24;
+    width: 85%;
+  }
+  &__desc {
+    @include fontStyle(24px, 400, 140%, $textPrimaryMain);
   }
   &__list {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: $space20;
-    grid-column-gap: $space20;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
   &__item {
-    cursor: pointer;
-  }
-  &__page {
-    @include fontStyle(14px, 500, 140%, $textPrimaryMain);
-    text-transform: uppercase;
-    transition: .3s;
-    &:hover {
-      color: $textPrimarySub;
-    }
-    &[disabled] {
-      color: $grayMainColor;
+    @include fontStyle(18px, 500, 140%, $textPrimarySub);
+    &>span {
+      color: $textPrimaryMain;
     }
   }
-  &__jump {
-    transition: .3s;
-    border-radius: 6px;
-    padding: 4px 4px 5px 4px;
-    &:hover {
-      background-color: $textPrimarySub;
-    }
+  &__img {
+    width: 500px;
+    height: 750px;
   }
 }

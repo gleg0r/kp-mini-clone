@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ITopSerials } from '../../core/mocks/apiTypes';
+import { ISerialInfo, ITopSerials } from '../../core/mocks/apiTypes';
 
 export const serialssApi = createApi({
   reducerPath: 'serialsApi',
@@ -21,16 +21,16 @@ export const serialssApi = createApi({
         },
       }),
     }),
-    // getMovieInformation: builder.query<IMovieInfo, number>({
-    //   query: (id) => ({
-    //     url: `movie/${id}`,
-    //     params: {
-    //       language: 'ru-RU'
-    //     }
-    //   })
-    // }),
+    getSerialInformation: builder.query<ISerialInfo, number>({
+      query: (id) => ({
+        url: `tv/${id}`,
+        params: {
+          language: 'ru-RU'
+        }
+      })
+    }),
   }),
   
 });
 
-export const { useGetTopSerialsQuery } = serialssApi;
+export const { useGetTopSerialsQuery, useGetSerialInformationQuery } = serialssApi;
