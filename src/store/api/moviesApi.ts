@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ITopMovies } from '../../core/mocks/apiTypes';
+import { ITopMovies, IMovieInfo } from '../../core/mocks/apiTypes';
 
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
@@ -13,7 +13,7 @@ export const moviesApi = createApi({
   tagTypes: ['TopMovies'],
   endpoints: (builder) => ({
     getTopMovies: builder.query<ITopMovies, number>({
-      query: (page: number) => ({
+      query: (page) => ({
         url: 'movie/top_rated',
         params: {
           language: 'ru-RU',
@@ -21,7 +21,16 @@ export const moviesApi = createApi({
         },
       }),
     }),
+    getMovieInformation: builder.query<IMovieInfo, number>({
+      query: (id) => ({
+        url: `movie/${id}`,
+        params: {
+          language: 'ru-RU'
+        }
+      })
+    }),
   }),
+  
 });
 
-export const { useGetTopMoviesQuery } = moviesApi;
+export const { useGetTopMoviesQuery, useGetMovieInformationQuery } = moviesApi;

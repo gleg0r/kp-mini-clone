@@ -88,11 +88,12 @@ legend {
 	display: block;
 }
 
-
-.ant-pagination-item-ellipsis {
-	color: rgb(172, 172, 172) !important;
+body::-webkit-scrollbar {
+	width: 12px;
+	background-color: #ffffff;
 }
 
-.ant-pagination-item-link-icon {
-	color: #fa6801 !important;
+body::-webkit-scrollbar-thumb {
+	background-color: #fa6801;
+	border-radius: 4px;
 }

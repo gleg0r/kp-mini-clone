@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.movie {
+  width: 100%;
+  padding: $space20;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: $space16;
+  &__title {
+    @include fontStyle(48px, 700, 140%, $textPrimaryMain);
+  }
+  &__rating {
+    @include fontStyle(36px, 700, 140%, $textPrimarySub);
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: $space24;
+    width: 85%;
+  }
+  &__desc {
+    @include fontStyle(24px, 400, 140%, $textPrimaryMain);
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__item {
+    @include fontStyle(18px, 500, 140%, $textPrimarySub);
+    &>span {
+      color: $textPrimaryMain;
+    }
+  }
+  &__img {
+    width: 500px;
+    height: 750px;
+  }
+}

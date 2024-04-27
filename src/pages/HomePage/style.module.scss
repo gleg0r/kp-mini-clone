@@ -19,4 +19,23 @@
   &__item {
     cursor: pointer;
   }
+  &__page {
+    @include fontStyle(14px, 500, 140%, $textPrimaryMain);
+    text-transform: uppercase;
+    transition: .3s;
+    &:hover {
+      color: $textPrimarySub;
+    }
+    &[disabled] {
+      color: $grayMainColor;
+    }
+  }
+  &__jump {
+    transition: .3s;
+    border-radius: 6px;
+    padding: 4px 4px 5px 4px;
+    &:hover {
+      background-color: $textPrimarySub;
+    }
+  }
 }

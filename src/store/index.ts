@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { moviesApi } from './api/moviesApi';
+import movieDataReducer from './slices/movieSlice';
 
 export const store = configureStore({
   reducer: {
+    movieData: movieDataReducer,
     [moviesApi.reducerPath]: moviesApi.reducer,
   },
   middleware: (getDefaultMiddleware) => 
