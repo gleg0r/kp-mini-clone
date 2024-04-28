@@ -19,10 +19,10 @@ const SerialsPage: FC = () => {
   const dispatch = useAppDispatch();
 
   const itemRender: antdPaginationProps['itemRender'] = (_, type, originalElement) => {
-    if(type === 'next') return <a className={s.home__page}>Next</a>;
-    if(type === 'prev') return <a className={s.home__page}>Prev</a>;
-    if(type === 'jump-next') return  <a className={s.home__jump}><RightOutlined style={{color: '#ffffff'}} /></a>;
-    if(type === 'jump-prev') return <a className={s.home__jump}><LeftOutlined style={{color: '#ffffff'}} /></a>; 
+    if(type === 'next') return <a className={s.serial__page}>Next</a>;
+    if(type === 'prev') return <a className={s.serial__page}>Prev</a>;
+    if(type === 'jump-next') return  <a className={s.serial__jump}><RightOutlined style={{color: '#ffffff'}} /></a>;
+    if(type === 'jump-prev') return <a className={s.serial__jump}><LeftOutlined style={{color: '#ffffff'}} /></a>; 
 
     return originalElement;
   };
@@ -53,7 +53,9 @@ const SerialsPage: FC = () => {
             total={totalPages}
             itemRender={itemRender}
           />
-        ) : <LoadingOutlined />}
+        ) : <div className={s.serial__loader}>
+        <LoadingOutlined style={{width: 50 , color: '#fa6801', fontSize: 50}} />
+      </div>}
         {!isLoading && !isError ? (
           <ul className={s.serial__list}>
           {

@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 const NavBar: FC = () => {
   const { pathname } = useLocation();
 
-  return(
+  return( 
     <>
       <nav className={s.nav}>
         {
@@ -14,7 +14,6 @@ const NavBar: FC = () => {
           ? <Link to='/serials' className={s.nav__link}>Сериалы</Link>
           : <Link to='/' className={s.nav__link}>Фильмы</Link>
         } 
-        <Link to='/persons' className={s.nav__link}>Люди</Link>
       </nav>
     </>
   );
