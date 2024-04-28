@@ -52,7 +52,10 @@ const HomePage: FC = () => {
             total={totalPages}
             itemRender={itemRender}
           />
-        ) : <LoadingOutlined />}
+        ) : <div className={s.home__loader}>
+          <LoadingOutlined style={{width: 50 , color: '#fa6801', fontSize: 50}} />
+        </div>
+        } 
         {!isLoading && !isError ? (
           <ul className={s.home__list}>
           {
