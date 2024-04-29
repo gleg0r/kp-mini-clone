@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.item {
+  @include flexBetween;
+  width: 100%;
+  padding: $space16;
+  &__img {
+    width: 60px;
+  }
+  &__title {
+    @include fontStyle(16px, 400, 140%, $blackMainColor);
+  }
+  &__rating {
+    @include fontStyle(24px, 500, 140%, $textPrimarySub);
+  }
+  &__date {
+    @extend .item__title;
+  }
+}

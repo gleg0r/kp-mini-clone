@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  &__input {
+    width: 40%;
+    padding: 8px $space24;
+    background-color: $textPrimaryMain;
+    @include fontStyle(16px, 400, 140%, $blackMainColor);
+    border-radius: $space16;
+    border: 2px solid $borderMainColor;
+    &::placeholder {
+      color: $blackMainColor;
+    }
+  }
+  &__results {
+    position: absolute;
+    width: 60%;
+    height: 300px;
+    background: $textPrimaryMain;
+    top: 50px;
+    border-radius: $space16 0 0 $space16;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      background: $textPrimaryMain;
+      width: 8px;
+      height: 10%;
+      border-radius: $space16;
+    }
+    &::-webkit-scrollbar-thumb {
+      width: 8px;
+      background: $textPrimarySub;
+    }
+  }
+}

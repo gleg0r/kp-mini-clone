@@ -8,3 +8,10 @@ export type CardProps = {
   imgLink: string,
   rating: number,
 }
+
+export type SearchItemProps = {
+  release_date: string | undefined,
+  title: string,
+  vote_average: number,
+  poster_path: string,
+}
