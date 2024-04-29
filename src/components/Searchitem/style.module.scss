@@ -4,14 +4,20 @@
   @include flexBetween;
   width: 100%;
   padding: $space16;
+  transition: .3s;
+  &:hover {
+    background: $grayMainColor;
+  }
   &__img {
     width: 60px;
   }
   &__title {
     @include fontStyle(16px, 400, 140%, $blackMainColor);
+    padding: 8px;
   }
   &__rating {
     @include fontStyle(24px, 500, 140%, $textPrimarySub);
+    padding: 8px;
   }
   &__date {
     @extend .item__title;

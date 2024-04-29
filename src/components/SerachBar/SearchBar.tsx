@@ -9,20 +9,28 @@ import { setMovieData } from '../../store/slices/movieSlice';
 
 const SearchBar: FC = () => {'';
   const [value, setValue] = useState<string>('');
+  const [isShowing, setIsShowing] = useState<boolean>(true);
   const debouncedSearchQuery = useDebounce(value, 500);
   const { data, isLoading } = useGetMultiSearchItemsQuery(debouncedSearchQuery);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    document.addEventListener('click', closeWindow);
+
+    return () => document.removeEventListener('click', closeWindow);
+  }, []);
 
   function handleChange(str: string) {
     setValue(str);
+    setIsShowing(true);
   }
 
   function handleClick(id: number) {
     dispatch(setMovieData(id));
+  }
+
+  function closeWindow() {
+    setIsShowing(false);
   }
 
   return (
@@ -32,9 +40,8 @@ const SearchBar: FC = () => {'';
         placeholder="Search..."
         className={s.search__input}
       />
-      <ul>
         {
-          !isLoading && data && data?.results.length > 0 ? <div className={s.search__results}>
+          isShowing && !isLoading && data && data?.results.length > 0 ? <ul className={s.search__results}>
             {
               data.results.map((item) => {
                 return <li key={item.id} onClick={() => handleClick(item.id)}>
@@ -44,14 +51,13 @@ const SearchBar: FC = () => {'';
                       title={item.title ? item.title! : item.name!}
                       vote_average={item.vote_average}
                       poster_path={item.poster_path}
-                    />;
-                  </Link>;
+                    />
+                  </Link>
                 </li>;
               })
             }
-          </div> : ''
+          </ul> : ''
         }
-      </ul>
     </div>
   );
 };

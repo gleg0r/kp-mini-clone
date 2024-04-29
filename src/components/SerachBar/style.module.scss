@@ -2,7 +2,8 @@
 
 .search {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   position: relative;
   &__input {
@@ -18,12 +19,13 @@
   }
   &__results {
     position: absolute;
-    width: 60%;
-    height: 300px;
+    display: inline-block;
+    width: 50%;
     background: $textPrimaryMain;
-    top: 50px;
+    height: 300px;
     border-radius: $space16 0 0 $space16;
     overflow-y: scroll;
+    top: 50px;
     &::-webkit-scrollbar {
       background: $textPrimaryMain;
       width: 8px;
